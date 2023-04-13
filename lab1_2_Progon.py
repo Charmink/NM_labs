@@ -12,8 +12,8 @@ def solve_tridiagonal(A, b):
     beta[0] = b[0] / A[0][0]
     for i in range(1, n-1):
         alpha[i] = -A[i][i+1] / (A[i][i] + A[i][i-1]*alpha[i-1])
-        beta[i] = (b[i] - A[i][i-1]*beta[i-1]) / (A[i][i] + A[i][i-1]*alpha[i-1])
-    beta[n-1] = (b[n-1] - A[n-1][n-2]*beta[n-2]) / (A[n-1][n-1] + A[n-1][n-2]*alpha[n-2])
+        beta[i] = (b[i] - A[i][i-1] * beta[i-1]) / (A[i][i] + A[i][i-1]*alpha[i-1])
+    beta[n-1] = (b[n-1] - A[n-1][n-2] * beta[n-2]) / (A[n-1][n-1] + A[n-1][n-2]*alpha[n-2])
 
     # обратный ход
     x[n-1] = beta[n-1]
